@@ -25,6 +25,8 @@ export function AIBackground() {
     let mouseX = 0;
     let mouseY = 0;
 
+    const isMobile = window.innerWidth < 768;
+
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -32,18 +34,24 @@ export function AIBackground() {
     };
 
     const initNodes = () => {
-      const count = Math.min(80, Math.floor((canvas.width * canvas.height) / 15000));
+      const density = isMobile ? 25000 : 15000;
+      const maxNodes = isMobile ? 35 : 80;
+      const count = Math.min(
+        maxNodes,
+        Math.floor((canvas.width * canvas.height) / density)
+      );
       nodes = Array.from({ length: count }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        radius: Math.random() * 2 + 1,
+        vx: (Math.random() - 0.5) * (isMobile ? 0.2 : 0.3),
+        vy: (Math.random() - 0.5) * (isMobile ? 0.2 : 0.3),
+        radius: Math.random() * (isMobile ? 1.5 : 2) + 0.5,
       }));
     };
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const connectDist = isMobile ? 100 : 150;
 
       nodes.forEach((node, i) => {
         node.x += node.vx;
@@ -52,12 +60,14 @@ export function AIBackground() {
         if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
         if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
 
-        const dx = mouseX - node.x;
-        const dy = mouseY - node.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 200) {
-          node.x -= dx * 0.002;
-          node.y -= dy * 0.002;
+        if (!isMobile) {
+          const dx = mouseX - node.x;
+          const dy = mouseY - node.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 200) {
+            node.x -= dx * 0.002;
+            node.y -= dy * 0.002;
+          }
         }
 
         ctx.beginPath();
@@ -68,11 +78,11 @@ export function AIBackground() {
         for (let j = i + 1; j < nodes.length; j++) {
           const other = nodes[j];
           const d = Math.hypot(node.x - other.x, node.y - other.y);
-          if (d < 150) {
+          if (d < connectDist) {
             ctx.beginPath();
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(other.x, other.y);
-            ctx.strokeStyle = `rgba(37, 99, 235, ${0.15 * (1 - d / 150)})`;
+            ctx.strokeStyle = `rgba(37, 99, 235, ${0.15 * (1 - d / connectDist)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -90,7 +100,9 @@ export function AIBackground() {
     resize();
     draw();
     window.addEventListener("resize", resize);
-    window.addEventListener("mousemove", handleMouse);
+    if (!isMobile) {
+      window.addEventListener("mousemove", handleMouse);
+    }
 
     return () => {
       cancelAnimationFrame(animationId);

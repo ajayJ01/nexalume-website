@@ -11,24 +11,28 @@ import { faqs } from "@/lib/data";
 
 export function FAQ() {
   return (
-    <section className="relative border-y border-white/5 bg-nexa-deep/50 py-32">
-      <div className="mx-auto max-w-3xl px-6 lg:px-8">
+    <section className="section-padding relative border-y border-white/5 bg-nexa-deep/50">
+      <div className="section-container max-w-3xl">
         <ScrollReveal className="text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-400">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 sm:tracking-[0.3em]">
             FAQ
           </span>
-          <h2 className="mt-4 font-display text-4xl font-bold text-white sm:text-5xl">
+          <h2 className="section-title mt-3 sm:mt-4">
             Common
             <span className="gradient-text"> Questions</span>
           </h2>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.2} className="mt-12">
+        <ScrollReveal delay={0.2} className="mt-8 sm:mt-12">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`item-${i}`}>
-                <AccordionTrigger>{faq.question}</AccordionTrigger>
-                <AccordionContent>{faq.answer}</AccordionContent>
+                <AccordionTrigger className="text-left text-sm sm:text-base">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-xs sm:text-sm">
+                  {faq.answer}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

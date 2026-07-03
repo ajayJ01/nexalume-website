@@ -27,7 +27,7 @@ export default function Home() {
       <ScrollProgress />
       <MouseGlow />
       <Navbar />
-      <main>
+      <main className="pb-20 sm:pb-0">
         <Hero />
         <TrustedBy />
         <About />

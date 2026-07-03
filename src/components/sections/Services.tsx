@@ -12,9 +12,9 @@ export function Services() {
   const activeCategory = serviceCategories.find((c) => c.id === active)!;
 
   return (
-    <section id="services" className="relative py-32">
+    <section id="services" className="section-padding relative overflow-hidden">
       <div
-        className="absolute top-0 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full opacity-20 blur-[150px]"
+        className="pointer-events-none absolute top-0 left-1/2 h-[300px] w-full max-w-[800px] -translate-x-1/2 rounded-full opacity-20 blur-[100px] md:h-[500px] md:blur-[150px]"
         style={{
           background:
             "radial-gradient(circle, rgba(37,99,235,0.3) 0%, transparent 70%)",
@@ -22,25 +22,26 @@ export function Services() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="section-container relative">
         <ScrollReveal className="mx-auto max-w-3xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-400">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-400 sm:tracking-[0.3em]">
             Our Services
           </span>
-          <h2 className="mt-4 font-display text-4xl font-bold text-white sm:text-5xl">
+          <h2 className="section-title mt-3 sm:mt-4">
             End-to-End Technology
             <br />
             <span className="gradient-text">Excellence</span>
           </h2>
-          <p className="mt-4 text-base text-white/50">
+          <p className="mt-3 px-2 text-sm text-white/50 sm:mt-4 sm:px-0 sm:text-base">
             From AI-powered intelligence to enterprise-grade infrastructure —
             everything your organization needs to lead in the digital age.
           </p>
         </ScrollReveal>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-12">
+        <div className="mt-10 space-y-6 lg:mt-16 lg:grid lg:grid-cols-12 lg:gap-8 lg:space-y-0">
           <ScrollReveal className="lg:col-span-4" delay={0.1}>
-            <div className="flex flex-col gap-2">
+            {/* Mobile: horizontal scroll tabs */}
+            <div className="scrollbar-hide -mx-4 flex gap-2 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0 lg:pb-0">
               {serviceCategories.map((category) => {
                 const Icon = category.icon;
                 return (
@@ -48,25 +49,25 @@ export function Services() {
                     key={category.id}
                     onClick={() => setActive(category.id)}
                     className={cn(
-                      "group flex items-center gap-4 rounded-xl px-5 py-4 text-left transition-all duration-300",
+                      "group flex shrink-0 items-center gap-3 rounded-xl px-4 py-3 text-left transition-all duration-300 sm:gap-4 sm:px-5 sm:py-4 lg:w-full",
                       active === category.id
-                        ? "glass-strong border-blue-500/20"
-                        : "hover:bg-white/[0.03]"
+                        ? "glass-strong border border-blue-500/20"
+                        : "border border-transparent bg-white/[0.02] hover:bg-white/[0.04] lg:hover:bg-white/[0.03]"
                     )}
                   >
                     <div
                       className={cn(
-                        "flex h-10 w-10 items-center justify-center rounded-lg transition-colors",
+                        "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors sm:h-10 sm:w-10",
                         active === category.id
                           ? "bg-blue-600/20 text-blue-400"
                           : "bg-white/5 text-white/40 group-hover:text-white/60"
                       )}
                     >
-                      <Icon className="h-5 w-5" />
+                      <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                     </div>
                     <span
                       className={cn(
-                        "text-sm font-medium transition-colors",
+                        "whitespace-nowrap text-sm font-medium transition-colors",
                         active === category.id
                           ? "text-white"
                           : "text-white/50 group-hover:text-white/70"
@@ -84,37 +85,37 @@ export function Services() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-                className="gradient-border glass h-full rounded-2xl p-8 lg:p-10"
+                exit={{ opacity: 0, y: -16 }}
+                transition={{ duration: 0.25 }}
+                className="gradient-border glass h-full rounded-xl p-5 sm:rounded-2xl sm:p-8 lg:p-10"
               >
                 <div
                   className={cn(
-                    "mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br",
+                    "mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br sm:mb-6 sm:h-14 sm:w-14 sm:rounded-2xl",
                     activeCategory.gradient
                   )}
                 >
-                  <activeCategory.icon className="h-7 w-7 text-white" />
+                  <activeCategory.icon className="h-6 w-6 text-white sm:h-7 sm:w-7" />
                 </div>
-                <h3 className="font-display text-2xl font-bold text-white lg:text-3xl">
+                <h3 className="font-display text-xl font-bold text-white sm:text-2xl lg:text-3xl">
                   {activeCategory.title}
                 </h3>
-                <p className="mt-3 max-w-lg text-base leading-relaxed text-white/50">
+                <p className="mt-2 text-sm leading-relaxed text-white/50 sm:mt-3 sm:text-base">
                   {activeCategory.description}
                 </p>
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <div className="mt-6 grid gap-2 sm:mt-8 sm:grid-cols-2 sm:gap-3">
                   {activeCategory.services.map((service) => (
                     <div
                       key={service}
-                      className="group flex items-center gap-3 rounded-lg border border-white/5 bg-white/[0.02] px-4 py-3 transition-all hover:border-blue-500/20 hover:bg-white/[0.05]"
+                      className="group flex items-center gap-2.5 rounded-lg border border-white/5 bg-white/[0.02] px-3 py-2.5 transition-all active:bg-white/[0.05] sm:gap-3 sm:px-4 sm:py-3 sm:hover:border-blue-500/20 sm:hover:bg-white/[0.05]"
                     >
-                      <div className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
-                      <span className="text-sm text-white/70 group-hover:text-white">
+                      <div className="h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
+                      <span className="text-xs text-white/70 sm:text-sm sm:group-hover:text-white">
                         {service}
                       </span>
-                      <ArrowUpRight className="ml-auto h-3.5 w-3.5 text-white/20 opacity-0 transition-all group-hover:opacity-100" />
+                      <ArrowUpRight className="ml-auto hidden h-3.5 w-3.5 text-white/20 opacity-0 transition-all group-hover:opacity-100 sm:block" />
                     </div>
                   ))}
                 </div>
