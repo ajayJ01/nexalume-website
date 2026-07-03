@@ -29,7 +29,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-[100] border-b border-white/10 bg-[#050816] transition-shadow duration-300",
+        "fixed top-[3px] left-0 right-0 z-[100] border-b border-white/10 bg-[#050816] transition-shadow duration-300",
         scrolled ? "shadow-lg shadow-black/30" : "shadow-none"
       )}
       style={{ paddingTop: "max(0.75rem, env(safe-area-inset-top))" }}

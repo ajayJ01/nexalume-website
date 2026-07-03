@@ -24,18 +24,11 @@ export function Services() {
 
       <div className="section-container relative">
         <ScrollReveal className="mx-auto max-w-3xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-400 sm:tracking-[0.3em]">
-            Our Services
-          </span>
-          <h2 className="section-title mt-3 sm:mt-4">
-            End-to-End Technology
-            <br />
-            <span className="gradient-text">Excellence</span>
+          <span className="section-label">Our Services</span>
+          <h2 className="section-title mt-3">
+            What We
+            <span className="gradient-text"> Build</span>
           </h2>
-          <p className="mt-3 px-2 text-sm text-white/50 sm:mt-4 sm:px-0 sm:text-base">
-            From AI-powered intelligence to enterprise-grade infrastructure —
-            everything your organization needs to lead in the digital age.
-          </p>
         </ScrollReveal>
 
         <div className="mt-10 space-y-6 lg:mt-16 lg:grid lg:grid-cols-12 lg:gap-8 lg:space-y-0">

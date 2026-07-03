@@ -17,17 +17,15 @@ export function Portfolio() {
       />
 
       <div className="section-container relative">
-        <ScrollReveal className="mx-auto max-w-3xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-400 sm:tracking-[0.3em]">
-            Portfolio
-          </span>
-          <h2 className="section-title mt-3 sm:mt-4">
-            Work That
-            <span className="gradient-text"> Speaks</span>
+        <ScrollReveal className="mx-auto max-w-2xl text-center">
+          <span className="section-label">Our Work</span>
+          <h2 className="section-title mt-3">
+            Featured
+            <span className="gradient-text"> Projects</span>
           </h2>
         </ScrollReveal>
 
-        <div className="mt-10 grid gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6">
           {portfolioItems.map((item, i) => (
             <ScrollReveal key={item.title} delay={i * 0.08}>
               <article className="group gradient-border glass flex h-full flex-col rounded-xl p-5 transition-all sm:rounded-2xl sm:p-8 sm:hover:-translate-y-2 sm:hover:bg-white/[0.06]">

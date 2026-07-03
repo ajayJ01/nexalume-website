@@ -8,11 +8,8 @@ import { Hero } from "@/components/sections/Hero";
 import { TrustedBy } from "@/components/sections/TrustedBy";
 import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
-import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
-import { TechStack } from "@/components/sections/TechStack";
 import { SuccessProcess } from "@/components/sections/SuccessProcess";
 import { Portfolio } from "@/components/sections/Portfolio";
-import { Products } from "@/components/sections/Products";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { Contact } from "@/components/sections/Contact";
@@ -28,11 +25,8 @@ export default function Home() {
         <TrustedBy />
         <About />
         <Services />
-        <WhyChooseUs />
-        <TechStack />
         <SuccessProcess />
         <Portfolio />
-        <Products />
         <Testimonials />
         <FAQ />
         <Contact />
