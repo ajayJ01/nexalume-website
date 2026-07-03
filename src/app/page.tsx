@@ -1,3 +1,4 @@
+import { HashScrollHandler } from "@/components/layout/HashScrollHandler";
 import { GSAPProvider } from "@/components/animations/GSAPProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -17,6 +18,7 @@ import { Contact } from "@/components/sections/Contact";
 export default function Home() {
   return (
     <GSAPProvider>
+      <HashScrollHandler />
       <ScrollProgress />
       <MouseGlow />
       <Navbar />

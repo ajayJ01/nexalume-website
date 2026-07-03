@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sparkles } from "lucide-react";
 import { navLinks } from "@/lib/data";
 import { Button } from "@/components/ui/button";
+import { ScrollLink } from "@/components/ui/scroll-link";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -35,7 +36,7 @@ export function Navbar() {
       style={{ paddingTop: "max(0.75rem, env(safe-area-inset-top))" }}
     >
       <nav className="section-container flex items-center justify-between py-3 sm:py-3.5">
-        <a href="#" className="group flex min-w-0 items-center gap-2 sm:gap-2.5">
+        <ScrollLink href="#" className="group flex min-w-0 items-center gap-2 sm:gap-2.5">
           <div className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 shadow-lg shadow-blue-500/30 sm:h-9 sm:w-9">
             <Sparkles className="h-3.5 w-3.5 text-white sm:h-4 sm:w-4" />
           </div>
@@ -47,26 +48,26 @@ export function Navbar() {
               Solutions
             </span>
           </div>
-        </a>
+        </ScrollLink>
 
         <div className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
-            <a
+            <ScrollLink
               key={link.href}
               href={link.href}
               className="rounded-lg px-3 py-2 text-sm text-white/60 transition-colors hover:bg-white/5 hover:text-white xl:px-4"
             >
               {link.label}
-            </a>
+            </ScrollLink>
           ))}
         </div>
 
         <div className="hidden items-center gap-2 lg:flex xl:gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <a href="#contact">Get in Touch</a>
+            <ScrollLink href="#get-in-touch">Get in Touch</ScrollLink>
           </Button>
           <Button size="sm" asChild>
-            <a href="#contact">Start a Project</a>
+            <ScrollLink href="#start-project">Start a Project</ScrollLink>
           </Button>
         </div>
 
@@ -100,25 +101,25 @@ export function Navbar() {
             >
               <div className="section-container flex flex-col gap-1 py-4 pb-8">
                 {navLinks.map((link) => (
-                  <a
+                  <ScrollLink
                     key={link.href}
                     href={link.href}
-                    onClick={closeMenu}
+                    onNavigate={closeMenu}
                     className="rounded-xl px-4 py-3.5 text-base text-white/80 transition-colors active:bg-white/10"
                   >
                     {link.label}
-                  </a>
+                  </ScrollLink>
                 ))}
                 <div className="mt-4 flex flex-col gap-3 border-t border-white/10 pt-4">
                   <Button className="w-full" size="lg" asChild>
-                    <a href="#contact" onClick={closeMenu}>
+                    <ScrollLink href="#start-project" onNavigate={closeMenu}>
                       Start a Project
-                    </a>
+                    </ScrollLink>
                   </Button>
                   <Button variant="outline" className="w-full" size="lg" asChild>
-                    <a href="#contact" onClick={closeMenu}>
+                    <ScrollLink href="#get-in-touch" onNavigate={closeMenu}>
                       Get in Touch
-                    </a>
+                    </ScrollLink>
                   </Button>
                 </div>
               </div>

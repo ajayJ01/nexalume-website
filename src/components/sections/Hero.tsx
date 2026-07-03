@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin, Sparkles } from "lucide-react";
 import { siteConfig } from "@/lib/data";
+import { ScrollLink } from "@/components/ui/scroll-link";
 import { Button } from "@/components/ui/button";
 import { AIBackground } from "@/components/animations/AIBackground";
 
@@ -68,13 +69,13 @@ export function Hero() {
             className="mt-7 flex w-full flex-col gap-3 sm:mt-9 sm:flex-row sm:justify-center sm:gap-4"
           >
             <Button size="lg" className="w-full sm:w-auto" asChild>
-              <a href="#contact">
+              <ScrollLink href="#start-project">
                 Start Your Project
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </ScrollLink>
             </Button>
             <Button variant="glass" size="lg" className="w-full sm:w-auto" asChild>
-              <a href="#portfolio">View Our Work</a>
+              <ScrollLink href="#portfolio">View Our Work</ScrollLink>
             </Button>
           </motion.div>
 

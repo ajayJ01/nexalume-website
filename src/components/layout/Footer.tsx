@@ -1,5 +1,8 @@
+"use client";
+
 import { Sparkles, Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import { siteConfig, footerLinks } from "@/lib/data";
+import { ScrollLink } from "@/components/ui/scroll-link";
 
 export function Footer() {
   return (
@@ -9,18 +12,17 @@ export function Footer() {
       <div className="section-container relative py-12 sm:py-16 lg:py-20">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
-            <a href="#" className="mb-5 flex items-center gap-2.5 sm:mb-6">
+            <ScrollLink href="#" className="mb-5 flex items-center gap-2.5 sm:mb-6">
               <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500">
                 <Sparkles className="h-4 w-4 text-white" />
               </div>
               <span className="font-display text-base font-bold text-white sm:text-lg">
                 Nexalume Solutions
               </span>
-            </a>
+            </ScrollLink>
             <p className="mb-6 max-w-sm text-sm leading-relaxed text-white/50 sm:mb-8">
-              {siteConfig.tagline} We architect intelligent systems that
-              transform industries and empower enterprises across India and
-              beyond.
+              {siteConfig.tagline} We architect intelligent systems for
+              businesses across India.
             </p>
             <div className="space-y-3">
               <a
@@ -52,7 +54,12 @@ export function Footer() {
               <ul className="space-y-2 sm:space-y-2.5">
                 {footerLinks.services.map((item) => (
                   <li key={item}>
-                    <span className="text-xs text-white/50 sm:text-sm">{item}</span>
+                    <ScrollLink
+                      href="#services"
+                      className="text-xs text-white/50 transition-colors active:text-white sm:text-sm"
+                    >
+                      {item}
+                    </ScrollLink>
                   </li>
                 ))}
               </ul>
@@ -64,12 +71,12 @@ export function Footer() {
               <ul className="space-y-2 sm:space-y-2.5">
                 {footerLinks.company.map((item) => (
                   <li key={item.label}>
-                    <a
+                    <ScrollLink
                       href={item.href}
                       className="text-xs text-white/50 transition-colors active:text-white sm:text-sm"
                     >
                       {item.label}
-                    </a>
+                    </ScrollLink>
                   </li>
                 ))}
               </ul>
@@ -100,6 +107,8 @@ export function Footer() {
           </p>
           <a
             href={siteConfig.domain}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-1 text-[11px] text-white/30 transition-colors active:text-white sm:text-xs"
           >
             nexalume.in

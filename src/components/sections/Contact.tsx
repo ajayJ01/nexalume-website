@@ -42,7 +42,7 @@ export function Contact() {
 
         <div className="mt-10 grid gap-6 sm:mt-16 sm:gap-8 lg:grid-cols-5">
           <ScrollReveal className="lg:col-span-2" delay={0.1}>
-            <div className="space-y-3 sm:space-y-6">
+            <div id="get-in-touch" className="section-anchor space-y-3 sm:space-y-6">
               {[
                 {
                   icon: Mail,
@@ -83,7 +83,10 @@ export function Contact() {
           </ScrollReveal>
 
           <ScrollReveal className="lg:col-span-3" delay={0.2}>
-            <div className="gradient-border glass rounded-xl p-5 sm:rounded-2xl sm:p-8 lg:p-10">
+            <div
+              id="start-project"
+              className="section-anchor gradient-border glass rounded-xl p-5 sm:rounded-2xl sm:p-8 lg:p-10"
+            >
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-10 text-center sm:py-12">
                   <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/10 sm:h-16 sm:w-16">
