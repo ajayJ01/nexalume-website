@@ -137,6 +137,27 @@ export const testimonials = [
     role: "Founder, FinServe Technologies",
     avatar: "RK",
   },
+  {
+    quote:
+      "Our school management app was delivered on time with a clean design. Parents and teachers love using it.",
+    author: "Priya Sharma",
+    role: "Director, SkillBridge Academy",
+    avatar: "PS",
+  },
+  {
+    quote:
+      "They automated our inventory and billing workflow. What used to take a full day now finishes in an hour.",
+    author: "Amit Patel",
+    role: "Owner, GreenLeaf Retail",
+    avatar: "AP",
+  },
+  {
+    quote:
+      "Professional team from Jaipur. Clear updates every week and the final product exceeded our expectations.",
+    author: "Neha Gupta",
+    role: "Co-Founder, DigiMart India",
+    avatar: "NG",
+  },
 ];
 
 export const faqs = [
