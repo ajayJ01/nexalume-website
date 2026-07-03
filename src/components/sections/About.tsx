@@ -5,7 +5,7 @@ import { stats } from "@/lib/data";
 
 export function About() {
   return (
-    <section id="about" className="section-padding relative">
+    <section id="about" className="section-padding section-anchor relative">
       <div className="absolute inset-0 grid-pattern opacity-20" aria-hidden="true" />
       <div className="section-container relative">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">

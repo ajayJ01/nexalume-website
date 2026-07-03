@@ -5,7 +5,7 @@ import { processSteps } from "@/lib/data";
 
 export function SuccessProcess() {
   return (
-    <section id="process" className="section-padding relative border-y border-white/5 bg-nexa-deep/50">
+    <section id="process" className="section-padding section-anchor relative border-y border-white/5 bg-nexa-deep/50">
       <div className="section-container">
         <ScrollReveal className="mx-auto max-w-3xl text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-400 sm:tracking-[0.3em]">
@@ -22,7 +22,7 @@ export function SuccessProcess() {
         </ScrollReveal>
 
         <div className="relative mt-10 sm:mt-20">
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3 xl:grid-cols-6">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
             {processSteps.map((step, i) => (
               <ScrollReveal key={step.step} delay={i * 0.08}>
                 <div className="group relative text-center">

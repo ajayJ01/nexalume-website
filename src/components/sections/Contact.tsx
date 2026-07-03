@@ -15,7 +15,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding relative overflow-hidden">
+    <section id="contact" className="section-padding section-anchor relative overflow-hidden">
       <div
         className="pointer-events-none absolute bottom-0 left-1/2 h-[300px] w-full max-w-[800px] -translate-x-1/2 rounded-full opacity-20 blur-[100px] sm:h-[500px] sm:blur-[150px]"
         style={{

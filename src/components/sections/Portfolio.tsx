@@ -6,7 +6,7 @@ import { portfolioItems } from "@/lib/data";
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="section-padding relative overflow-hidden">
+    <section id="portfolio" className="section-padding section-anchor relative overflow-hidden">
       <div
         className="pointer-events-none absolute top-1/2 left-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-15 blur-[100px] sm:h-[500px] sm:w-[500px] sm:blur-[150px]"
         style={{

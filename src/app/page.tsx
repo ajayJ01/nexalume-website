@@ -11,13 +11,9 @@ import { Services } from "@/components/sections/Services";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { TechStack } from "@/components/sections/TechStack";
 import { SuccessProcess } from "@/components/sections/SuccessProcess";
-import { Industries } from "@/components/sections/Industries";
-import { CaseStudies } from "@/components/sections/CaseStudies";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { Products } from "@/components/sections/Products";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { Blog } from "@/components/sections/Blog";
-import { Careers } from "@/components/sections/Careers";
 import { FAQ } from "@/components/sections/FAQ";
 import { Contact } from "@/components/sections/Contact";
 
@@ -35,13 +31,9 @@ export default function Home() {
         <WhyChooseUs />
         <TechStack />
         <SuccessProcess />
-        <Industries />
-        <CaseStudies />
         <Portfolio />
         <Products />
         <Testimonials />
-        <Blog />
-        <Careers />
         <FAQ />
         <Contact />
       </main>

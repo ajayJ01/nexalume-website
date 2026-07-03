@@ -7,7 +7,7 @@ export function TrustedBy() {
     <section className="relative overflow-hidden border-y border-white/5 bg-nexa-deep/50 py-10 sm:py-14 md:py-16">
       <div className="mb-6 text-center sm:mb-8">
         <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/30 sm:text-xs sm:tracking-[0.3em]">
-          Trusted by Industry Leaders
+          Trusted by Growing Businesses
         </p>
       </div>
       <div className="relative">

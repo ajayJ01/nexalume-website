@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export function Products() {
   return (
-    <section id="products" className="section-padding relative border-y border-white/5 bg-nexa-deep/50">
+    <section id="products" className="section-padding section-anchor relative border-y border-white/5 bg-nexa-deep/50">
       <div className="section-container">
         <ScrollReveal className="mx-auto max-w-3xl text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 sm:tracking-[0.3em]">

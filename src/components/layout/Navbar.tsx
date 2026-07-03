@@ -29,14 +29,12 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled || mobileOpen
-          ? "glass-strong py-3 shadow-lg shadow-black/20"
-          : "bg-transparent py-4 sm:py-5"
+        "fixed top-0 left-0 right-0 z-[100] border-b border-white/10 bg-[#050816] transition-shadow duration-300",
+        scrolled ? "shadow-lg shadow-black/30" : "shadow-none"
       )}
       style={{ paddingTop: "max(0.75rem, env(safe-area-inset-top))" }}
     >
-      <nav className="section-container flex items-center justify-between">
+      <nav className="section-container flex items-center justify-between py-3 sm:py-3.5">
         <a href="#" className="group flex min-w-0 items-center gap-2 sm:gap-2.5">
           <div className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 shadow-lg shadow-blue-500/30 sm:h-9 sm:w-9">
             <Sparkles className="h-3.5 w-3.5 text-white sm:h-4 sm:w-4" />
